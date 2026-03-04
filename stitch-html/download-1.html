@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KAFI Research Editorial Calendar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f97415",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#03060a",
+                        "surface": "#070c12",
+                        "card": "#101825",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"],
+                        "heading": ["Syne", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex overflow-hidden">
+<!-- Left Sidebar -->
+<aside class="w-[200px] border-r border-slate-800 flex flex-col bg-surface h-screen shrink-0">
+<div class="p-6">
+<div class="flex items-center gap-2 mb-10">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center font-heading text-white text-xl">K</div>
+<span class="font-heading text-lg tracking-tight">KAFI</span>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px]">account_tree</span>
+<span class="text-sm font-medium">Pipeline</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="text-sm font-medium">Templates</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">database</span>
+<span class="text-sm font-medium">Knowledge</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white bg-primary/10 border-l-4 border-primary" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary">calendar_month</span>
+<span class="text-sm font-medium">Calendar</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-700 overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Analyst profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn-r5W1lI0qAaPvnvtfEtnekgtdVJvSjeK3axdctZah-SemW7xwU1F1vQ4cNQKpz-eG3K_oUjBVUs1uD6eyTnoe1A06o7HeKWq8a-kO-PJ21qm0HJ7Lp_M58yyXlApy-1WSr5e6AGFEIKMnrSZ7nCwiXQhgXBSgj8S0zoDkbbZunrGiGHnyq_ijAwMTHRqPh9Yd91Z5fdpnImk1PwMMd25DWTTlufXSnUeoWZhxH2bFu20RhSZUPmlBdUivtGp1GKCxqFPtVFv-_4"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold">Hai Tran</span>
+<span class="text-[10px] text-slate-500">Macro Lead</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="h-14 border-b border-slate-800 bg-surface flex items-center justify-between px-6 shrink-0">
+<h1 class="font-heading text-lg uppercase tracking-wider">Editorial Calendar</h1>
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:text-primary/80"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="font-mono text-primary font-bold">FEBRUARY 2026</span>
+<button class="text-primary hover:text-primary/80"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="flex bg-slate-900 rounded-lg p-1">
+<button class="px-4 py-1 text-xs font-bold rounded-md bg-slate-800 text-white">MONTH</button>
+<button class="px-4 py-1 text-xs font-bold text-slate-500 hover:text-white">WEEK</button>
+<button class="px-4 py-1 text-xs font-bold text-slate-500 hover:text-white">LIST</button>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold text-xs px-4 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                    NEW REPORT
+                </button>
+</div>
+</header>
+<!-- Legend Strip -->
+<div class="bg-surface border-b border-slate-800 px-6 py-2 flex items-center gap-4 overflow-x-auto no-scrollbar shrink-0">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-[10px] font-bold text-primary uppercase">Deadline</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="text-[10px] font-bold text-amber-500 uppercase">AI Milestone</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="text-[10px] font-bold text-emerald-500 uppercase">Publication</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>
+<span class="text-[10px] font-bold text-blue-500 uppercase">Compliance</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-500/10 border border-red-500/20">
+<span class="w-2 h-2 rounded-full bg-red-500"></span>
+<span class="text-[10px] font-bold text-red-500 uppercase">Urgent</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sky-400/10 border border-sky-400/20">
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<span class="text-[10px] font-bold text-sky-400 uppercase">Data Release</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20">
+<span class="w-2 h-2 rounded-full bg-purple-500"></span>
+<span class="text-[10px] font-bold text-purple-500 uppercase">Internal</span>
+</div>
+</div>
+<!-- Main Content (Calendar + Detail Panel) -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Calendar Grid -->
+<div class="flex-1 overflow-y-auto bg-background-dark">
+<div class="calendar-grid border-b border-slate-800">
+<div class="p-2 text-center text-[10px] font-bold text-slate-500 uppercase border-r border-slate-800">Sun</div>
+<div class="p-2 text-center text-[10px] font-bold text-slate-500 uppercase border-r border-slate-800">Mon</div>
+<div class="p-2 text-center text-[10px] font-bold text-slate-500 uppercase border-r border-slate-800">Tue</div>
+<div class="p-2 text-center text-[10px] font-bold text-slate-500 uppercase border-r border-slate-800">Wed</div>
+<div class="p-2 text-center text-[10px] font-bold text-slate-500 uppercase border-r border-slate-800">Thu</div>
+<div class="p-2 text-center text-[10px] font-bold text-slate-500 uppercase border-r border-slate-800">Fri</div>
+<div class="p-2 text-center text-[10px] font-bold text-slate-500 uppercase">Sat</div>
+</div>
+<div class="calendar-grid min-h-full">
+<!-- Row 1 (Partial) -->
+<div class="min-h-[140px] border-r border-b border-slate-800 bg-black/20 p-2"></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">01</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">02</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2">
+<span class="font-mono text-xs text-slate-600">03</span>
+<div class="mt-1 space-y-1">
+<div class="bg-sky-400 text-[10px] font-bold px-1.5 py-0.5 rounded text-black truncate">GSO CPI RELEASE</div>
+</div>
+</div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">04</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2">
+<span class="font-mono text-xs text-slate-600">05</span>
+<div class="mt-1 space-y-1">
+<div class="bg-primary text-[10px] font-bold px-1.5 py-0.5 rounded text-white truncate">RPT-031 DUE</div>
+</div>
+</div>
+<div class="min-h-[140px] border-b border-slate-800 bg-black/20 p-2"><span class="font-mono text-xs text-slate-600">06</span></div>
+<!-- Row 2 -->
+<div class="min-h-[140px] border-r border-b border-slate-800 bg-black/20 p-2"><span class="font-mono text-xs text-slate-600">07</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">08</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">09</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">10</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2">
+<span class="font-mono text-xs text-slate-600">11</span>
+<div class="mt-1 space-y-1">
+<div class="bg-emerald-500 text-[10px] font-bold px-1.5 py-0.5 rounded text-black truncate">MACRO SEMINAR</div>
+</div>
+</div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">12</span></div>
+<div class="min-h-[140px] border-b border-slate-800 bg-black/20 p-2"><span class="font-mono text-xs text-slate-600">13</span></div>
+<!-- Row 3 -->
+<div class="min-h-[140px] border-r border-b border-slate-800 bg-black/20 p-2"><span class="font-mono text-xs text-slate-600">14</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">15</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2">
+<span class="font-mono text-xs text-slate-600">16</span>
+<div class="mt-1 space-y-1">
+<div class="bg-purple-500 text-[10px] font-bold px-1.5 py-0.5 rounded text-white truncate">INTERNAL AUDIT</div>
+</div>
+</div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">17</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">18</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2">
+<span class="font-mono text-xs text-slate-600">19</span>
+<div class="mt-1 space-y-1">
+<div class="bg-blue-500 text-[10px] font-bold px-1.5 py-0.5 rounded text-white truncate">VND FX UPDATE</div>
+</div>
+</div>
+<div class="min-h-[140px] border-b border-slate-800 bg-black/20 p-2"><span class="font-mono text-xs text-slate-600">20</span></div>
+<!-- Row 4 -->
+<div class="min-h-[140px] border-r border-b border-slate-800 bg-black/20 p-2"><span class="font-mono text-xs text-slate-600">21</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">22</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">23</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">24</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2"><span class="font-mono text-xs text-slate-600">25</span></div>
+<div class="min-h-[140px] border-r border-b border-slate-800 p-2 relative bg-primary/5">
+<div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary font-mono text-xs text-white">26</div>
+<div class="mt-1 space-y-1">
+<div class="bg-red-500 text-[10px] font-bold px-1.5 py-0.5 rounded text-white truncate">URGENT: SBV ALERT</div>
+</div>
+</div>
+<div class="min-h-[140px] border-b border-slate-800 bg-black/20 p-2"><span class="font-mono text-xs text-slate-600">27</span></div>
+</div>
+</div>
+<!-- Right Detail Panel -->
+<aside class="w-[280px] bg-surface border-l border-slate-800 flex flex-col p-6 overflow-y-auto">
+<div class="mb-8">
+<h3 class="font-heading text-sm uppercase text-slate-400 mb-4">Detail View — Feb 27</h3>
+<div class="space-y-4">
+<div class="pl-3 border-l-4 border-primary">
+<p class="text-xs font-mono text-slate-500">09:00 AM</p>
+<h4 class="text-sm font-bold">RPT-044 FINAL DRAFT</h4>
+<p class="text-[10px] text-slate-500">Hai Tran • Market Outlook</p>
+</div>
+<div class="pl-3 border-l-4 border-amber-500">
+<p class="text-xs font-mono text-slate-500">11:30 AM</p>
+<h4 class="text-sm font-bold">LLM DATA PIPELINE TEST</h4>
+<p class="text-[10px] text-slate-500">Tech Team • AI Milestone</p>
+</div>
+<div class="pl-3 border-l-4 border-emerald-500">
+<p class="text-xs font-mono text-slate-500">03:00 PM</p>
+<h4 class="text-sm font-bold">WEEKLY WRAP PUBLISH</h4>
+<p class="text-[10px] text-slate-500">M. Tran • Publication</p>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-800 pt-6">
+<h3 class="font-heading text-sm uppercase text-slate-400 mb-4">Analyst Workload</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span>Hai Tran</span>
+<span class="text-amber-500">80%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 w-[80%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span>M. TRAN</span>
+<span class="text-emerald-500">40%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 w-[40%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span>K. PHAM</span>
+<span class="text-blue-500">25%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 w-[25%]"></div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Bottom Mini-Agenda -->
+<footer class="h-16 border-t border-slate-800 bg-surface flex items-center px-6 shrink-0 gap-6 overflow-x-auto no-scrollbar">
+<div class="flex flex-col items-center min-w-[80px]">
+<span class="text-[10px] font-bold text-slate-500">FEB 26</span>
+<div class="flex gap-0.5 mt-1">
+<div class="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+</div>
+</div>
+<div class="h-8 w-[1px] bg-slate-800"></div>
+<div class="flex flex-col items-center min-w-[80px] bg-primary/5 rounded py-1 border border-primary/20">
+<span class="text-[10px] font-bold text-primary">FEB 27</span>
+<div class="flex gap-0.5 mt-1">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+</div>
+</div>
+<div class="flex flex-col items-center min-w-[80px]">
+<span class="text-[10px] font-bold text-slate-500">FEB 28</span>
+<div class="flex gap-0.5 mt-1">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-700"></div>
+</div>
+</div>
+<div class="flex flex-col items-center min-w-[80px]">
+<span class="text-[10px] font-bold text-slate-500">MAR 01</span>
+<div class="flex gap-0.5 mt-1">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-700"></div>
+</div>
+</div>
+<div class="flex flex-col items-center min-w-[80px]">
+<span class="text-[10px] font-bold text-slate-500">MAR 02</span>
+<div class="flex gap-0.5 mt-1">
+<div class="w-1.5 h-1.5 rounded-full bg-sky-400"></div>
+</div>
+</div>
+<div class="flex flex-col items-center min-w-[80px]">
+<span class="text-[10px] font-bold text-slate-500">MAR 03</span>
+<div class="flex gap-0.5 mt-1">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+</div>
+</div>
+<div class="flex flex-col items-center min-w-[80px]">
+<span class="text-[10px] font-bold text-slate-500">MAR 04</span>
+<div class="flex gap-0.5 mt-1">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

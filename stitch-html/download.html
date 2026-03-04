@@ -1,0 +1,307 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f97415",
+            "background-light": "#f8f7f5",
+            "background-dark": "#03060a",
+            "surface-dark": "#070c12",
+            "card-dark": "#101825",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "mono": ["Inter", "sans-serif"],
+            "heading": ["Syne", "sans-serif"],
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-mono { font-family: 'Inter', sans-serif; }
+    .font-heading { font-family: 'Syne', sans-serif; }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Left Sidebar -->
+<aside class="w-[240px] border-r border-primary/10 bg-surface-dark flex flex-col justify-between p-6">
+<div class="space-y-8">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
+<span class="text-white font-heading text-2xl">K</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold tracking-tight text-white uppercase">KAFI Studio</span>
+<span class="text-[10px] text-primary font-mono uppercase">Market Intelligence</span>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="space-y-2">
+<div class="flex items-center gap-3 px-3 py-2 rounded border-l-2 border-primary bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Templates</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded text-slate-400 hover:text-white transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">account_tree</span>
+<span class="text-sm font-medium">Pipeline</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded text-slate-400 hover:text-white transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span class="text-sm font-medium">Knowledge Base</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded text-slate-400 hover:text-white transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="text-sm font-medium">Calendar</span>
+</div>
+</nav>
+</div>
+<!-- Bottom Profile/Status -->
+<div class="space-y-4">
+<div class="flex items-center gap-3 px-2">
+<div class="relative">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-surface-dark"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-white">A. Thompson</span>
+<span class="text-[10px] text-slate-500 font-mono uppercase">Senior Analyst</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden bg-background-dark">
+<!-- Header -->
+<header class="p-8 pb-4 flex flex-wrap items-end justify-between gap-6">
+<div>
+<h1 class="text-4xl font-heading font-extrabold text-white tracking-tight">TEMPLATE LIBRARY</h1>
+<p class="text-primary font-mono text-sm mt-1 uppercase tracking-widest">6 TEMPLATES AVAILABLE</p>
+</div>
+<div class="relative w-full max-w-md">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-500 text-sm">search</span>
+<input class="w-full bg-card-dark border border-slate-800 rounded px-10 py-2.5 text-xs font-mono focus:border-primary focus:ring-0 text-white placeholder:text-slate-600" placeholder="SEARCH_TERMINAL_0.1..." type="text"/>
+</div>
+</header>
+<!-- Category Filter Row -->
+<div class="px-8 mb-6 flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-4 py-1.5 rounded-full border border-primary bg-primary/10 text-primary text-[10px] font-mono font-bold uppercase tracking-wider">ALL</button>
+<button class="px-4 py-1.5 rounded-full border border-slate-800 bg-surface-dark text-slate-400 hover:border-slate-600 text-[10px] font-mono font-bold uppercase tracking-wider">MACRO</button>
+<button class="px-4 py-1.5 rounded-full border border-slate-800 bg-surface-dark text-slate-400 hover:border-slate-600 text-[10px] font-mono font-bold uppercase tracking-wider">FLASH NOTE</button>
+<button class="px-4 py-1.5 rounded-full border border-slate-800 bg-surface-dark text-slate-400 hover:border-slate-600 text-[10px] font-mono font-bold uppercase tracking-wider">STRATEGY</button>
+<button class="px-4 py-1.5 rounded-full border border-slate-800 bg-surface-dark text-slate-400 hover:border-slate-600 text-[10px] font-mono font-bold uppercase tracking-wider">SECTOR</button>
+<button class="px-4 py-1.5 rounded-full border border-slate-800 bg-surface-dark text-slate-400 hover:border-slate-600 text-[10px] font-mono font-bold uppercase tracking-wider">INITIATION</button>
+<button class="px-4 py-1.5 rounded-full border border-slate-800 bg-surface-dark text-slate-400 hover:border-slate-600 text-[10px] font-mono font-bold uppercase tracking-wider">EARNINGS</button>
+</div>
+<!-- Split Layout -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left: Template Grid (58%) -->
+<div class="w-[58%] overflow-y-auto px-8 pb-10 custom-scrollbar">
+<div class="grid grid-cols-2 gap-4">
+<!-- Selected Card -->
+<div class="bg-card-dark p-5 rounded-lg border-l-4 border-primary ring-1 ring-slate-800/50 flex flex-col gap-4 group cursor-pointer">
+<div class="w-full aspect-video bg-surface-dark rounded overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+<div class="absolute top-3 left-3 px-2 py-0.5 bg-primary text-[10px] font-mono font-bold text-white rounded">MACRO</div>
+<img class="w-full h-full object-cover mix-blend-overlay" data-alt="Macroeconomic dashboard with complex financial charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMyzbELaQEmq-qEbfC8X5quGJfH5vRmuPuYRgladiatmQeeMWzptbm1rP5xtnpmnvqn2wMbMjdHB2qxKudxzkvnJ4xFimhXTtziEmqh3oqbQ5t_JD_JJm94nju4FUDc9qMhBy_e5b7KAUq75zYB1KmpBr3kbqgAcfC5SA9a-A2Ero2GYIMXffbCGzSgP687RXRrFF66CDaHKmYAlXBkH9AJ5RJmXlXU6QMwj1xubbyudDY01bvKKYkG9O1W1TLF0AUCUatMxP_yw"/>
+</div>
+<div class="space-y-2">
+<h3 class="text-lg font-heading font-bold text-white">Macro Monthly</h3>
+<div class="grid grid-cols-2 gap-y-2 text-[10px] font-mono text-slate-400 uppercase tracking-tighter">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">person</span> 1.2k Uses
+                  </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">timer</span> 45m Avg
+                  </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">description</span> 24 Pages
+                  </div>
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-xs">auto_awesome</span> AI Ready
+                  </div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-card-dark p-5 rounded-lg border border-slate-800 flex flex-col gap-4 group hover:border-slate-600 cursor-pointer">
+<div class="w-full aspect-video bg-surface-dark rounded overflow-hidden relative">
+<div class="absolute top-3 left-3 px-2 py-0.5 bg-amber-500 text-[10px] font-mono font-bold text-black rounded">FLASH</div>
+<img class="w-full h-full object-cover opacity-50" data-alt="Real-time stock market data ticker feed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWsID9DfXM6Gn99gyI7S5ZsOkJ2vowXOnqmxSxUC9kSe1qhbjv7iew9S0dtjiZUl-jnprRHYKqKa3qfkKawuFnTDfWwP4fL3dumRVn_SANxEMoyuAgGXyz63loBiAYBZ-ikZnek2w_iqlvDZthANiJ6r3AvWpjd0hHa9_XFvDVlQ7iZZTBIUYmnKHVaRCyC_PYOVgci726aDmemTctHq5DkiuLtvHBnYDDKWVuhOivFwiw49DOn8aTvP5JOzWZ7APTw14SxjqQqqw"/>
+</div>
+<div class="space-y-2">
+<h3 class="text-lg font-heading font-bold text-white">Flash Note</h3>
+<div class="grid grid-cols-2 gap-y-2 text-[10px] font-mono text-slate-400 uppercase tracking-tighter">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">person</span> 850 Uses
+                  </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">timer</span> 15m Avg
+                  </div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-card-dark p-5 rounded-lg border border-slate-800 flex flex-col gap-4 group hover:border-slate-600 cursor-pointer">
+<div class="w-full aspect-video bg-surface-dark rounded overflow-hidden relative">
+<div class="absolute top-3 left-3 px-2 py-0.5 bg-purple-500 text-[10px] font-mono font-bold text-white rounded">STRATEGY</div>
+<img class="w-full h-full object-cover opacity-50" data-alt="Strategic planning meeting with digital world map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAil1Ll6JVqNmhIECgPSFgUS1lYyQE61unULKzgaWHsq6awctVo3M1wv8jcA7WTmLgUEYSO7BlMEs0R6WHYew_yocN-nMf4BYLDuFYxwL3MGVT6xP_qjvgBHxvWyFJUE9IURs01qr25g0nvcUL-PIONLNaaB6-ydf2EHlzsOB5EflkH8GPbPZoqhQ43FI0Pj_u3cMXEoingGR0zutloJUWVBe_6_gsSbmiGZqfCENqzTqSjjiNGaj7s2-U5jlZJxVSUb1at8zYI7lg"/>
+</div>
+<div class="space-y-2">
+<h3 class="text-lg font-heading font-bold text-white">Vietnam Strategy</h3>
+<div class="grid grid-cols-2 gap-y-2 text-[10px] font-mono text-slate-400 uppercase tracking-tighter">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">person</span> 400 Uses
+                  </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">timer</span> 30m Avg
+                  </div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-card-dark p-5 rounded-lg border border-slate-800 flex flex-col gap-4 group hover:border-slate-600 cursor-pointer">
+<div class="w-full aspect-video bg-surface-dark rounded overflow-hidden relative">
+<div class="absolute top-3 left-3 px-2 py-0.5 bg-emerald-500 text-[10px] font-mono font-bold text-white rounded">SECTOR</div>
+<img class="w-full h-full object-cover opacity-50" data-alt="High-tech banking and finance district skyscrapers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrNWzc8SPywSPfPA6RuT315tDM8Wyb8IuajIrrQtJvWy5eZ0i7skSChLI8lPEW9zWdP8pao7qW5vX6y_iP9d42BgiGe2gdYBoUEPvw-XwODVDKWkEjMjfgF0rhrT7yXGiMrPBet5JH15lZUl2L58il_zbrPa3GwAro-b0xk9MLCBzU9Q5rqxWHzFKK6a2yT9WwXndx7msScqQFjxhOcq9W1cc-mH3TrfGM2NczbRztTmTm2G4KK-FWhOw0IW6jc0hE3lSPbvQtngs"/>
+</div>
+<div class="space-y-2">
+<h3 class="text-lg font-heading font-bold text-white">Banking Sector</h3>
+<div class="grid grid-cols-2 gap-y-2 text-[10px] font-mono text-slate-400 uppercase tracking-tighter">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">person</span> 300 Uses
+                  </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">timer</span> 60m Avg
+                  </div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-card-dark p-5 rounded-lg border border-slate-800 flex flex-col gap-4 group hover:border-slate-600 cursor-pointer">
+<div class="w-full aspect-video bg-surface-dark rounded overflow-hidden relative">
+<div class="absolute top-3 left-3 px-2 py-0.5 bg-blue-500 text-[10px] font-mono font-bold text-white rounded">INITIATION</div>
+<img class="w-full h-full object-cover opacity-50" data-alt="Business handshake symbolizing market initiation deal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYgcmHHS-xy4JEWjnyOIT_xyzyyL5iUep2tHZjWSj7KY7Bc4T0woKJVNbZ7S9uQ7SxwF3j3sjmvSodagTohZr-AVB1JH2JeSx8P1wC7wlUI1j_wG_vAAZOK0MnFBO-sNDjlhBZd_zd90XvQPw391-QNYB7qsbgSWriYjeDQj5FHU7NxagAa2Z3jJXA37DANGU-wmh-7TuS9xigFDiqaOq2wHxIzKBvwfZDPSPPcxtzw-KVxgaSjDJ_WJobhyIRs7ikWnowxOLgSoQ"/>
+</div>
+<div class="space-y-2">
+<h3 class="text-lg font-heading font-bold text-white">Market Initiation</h3>
+<div class="grid grid-cols-2 gap-y-2 text-[10px] font-mono text-slate-400 uppercase tracking-tighter">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">person</span> 150 Uses
+                  </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">timer</span> 120m Avg
+                  </div>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-card-dark p-5 rounded-lg border border-slate-800 flex flex-col gap-4 group hover:border-slate-600 cursor-pointer">
+<div class="w-full aspect-video bg-surface-dark rounded overflow-hidden relative">
+<div class="absolute top-3 left-3 px-2 py-0.5 bg-primary/80 text-[10px] font-mono font-bold text-white rounded">EARNINGS</div>
+<img class="w-full h-full object-cover opacity-50" data-alt="Data graph showing corporate earnings growth trends" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo0jHt0C5wCegH1zqe-7MsQYQie-RjaJwQIAcvcFvj_yZlxmc0VMRcJHyEKjNYaVYzdxlBjM3j6Hr_0Ko3LrUEu0TiQF9_8IQsCEftthAgyAxjZoKjIhHaOqJCzBPz9GrpTL9DEo_qbsiJj3awipknCf4xeIMF088KoV93GyJeW6O93_o0zz4TPrI9Nuci3bq5nhb6bqBh9uit_zme3xtTYhvXeQ3M6JHsD-Lgki75DFp9r4YhH1Z1uTZUkNYBPZb8sBA2U5uaj4I"/>
+</div>
+<div class="space-y-2">
+<h3 class="text-lg font-heading font-bold text-white">Earnings Preview</h3>
+<div class="grid grid-cols-2 gap-y-2 text-[10px] font-mono text-slate-400 uppercase tracking-tighter">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">person</span> 900 Uses
+                  </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-600">timer</span> 20m Avg
+                  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Detail Panel (42%) -->
+<div class="w-[42%] bg-surface-dark border-l border-slate-800 p-8 overflow-y-auto custom-scrollbar">
+<div class="space-y-8">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 text-[10px] font-mono font-bold tracking-widest uppercase rounded">ACTIVE_TEMPLATE</span>
+</div>
+<h2 class="text-4xl font-heading font-black text-white leading-[0.9] uppercase">MACRO MONTHLY OUTLOOK</h2>
+<p class="text-slate-400 text-sm leading-relaxed">Advanced structural framework for high-conviction macroeconomic research. Pre-integrated with global liquidity models and central bank policy trackers.</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded flex items-center justify-center gap-3 transition-all group">
+<span class="text-sm tracking-widest uppercase">USE THIS TEMPLATE</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Section breakdown -->
+<div class="space-y-4">
+<h4 class="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-[0.2em] border-b border-slate-800 pb-2">Report Structure</h4>
+<ul class="space-y-3 font-mono text-xs">
+<li class="flex items-center gap-3 text-white">
+<span class="text-primary">01</span>
+<span>Executive Summary &amp; Conviction Score</span>
+</li>
+<li class="flex items-center gap-3 text-slate-400">
+<span class="text-slate-600">02</span>
+<span>Macro Environment &amp; GDP Dynamics</span>
+</li>
+<li class="flex items-center gap-3 text-slate-400">
+<span class="text-slate-600">03</span>
+<span>Inflation &amp; Central Bank Pivot Analysis</span>
+</li>
+<li class="flex items-center gap-3 text-slate-400">
+<span class="text-slate-600">04</span>
+<span>Liquidity Flow &amp; Asset Allocation Matrix</span>
+</li>
+<li class="flex items-center gap-3 text-slate-400">
+<span class="text-slate-600">05</span>
+<span>Risk Monitoring &amp; Tail Scenarios</span>
+</li>
+</ul>
+</div>
+<!-- Agents & Data -->
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-3">
+<h4 class="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest">AI AGENTS</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[9px] font-mono rounded">Data-CoT</span>
+<span class="px-2 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[9px] font-mono rounded">Chart-Vibe</span>
+</div>
+</div>
+<div class="space-y-3">
+<h4 class="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest">DATA SOURCES</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9px] font-mono rounded">Bloomberg</span>
+<span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9px] font-mono rounded">GSO</span>
+<span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9px] font-mono rounded">Refinitiv</span>
+</div>
+</div>
+</div>
+<!-- Detailed Stats -->
+<div class="p-4 bg-card-dark rounded border border-slate-800 grid grid-cols-2 gap-4">
+<div class="flex flex-col">
+<span class="text-[9px] font-mono text-slate-500 uppercase">Success Rate</span>
+<span class="text-xl font-heading font-bold text-white">98.4%</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-mono text-slate-500 uppercase">Avg. Generation Time</span>
+<span class="text-xl font-heading font-bold text-white">42.8s</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+```</body></html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KAFI Market Intelligence Studio Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f87416",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#03060A",
+                        "panel-dark": "#070C12",
+                        "border-dark": "#1A2C3E",
+                        "success": "#10B981",
+                        "warning": "#F59E0B",
+                        "danger": "#EF4444"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["Inter", "sans-serif"],
+                        "syne": ["Syne", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+        }
+        .active-nav-border {
+            border-left: 3px solid #f87416;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #03060A;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1A2C3E;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display selection:bg-primary/30">
+<!-- Top Ticker Marquee -->
+<div class="h-8 bg-black border-b border-border-dark flex items-center overflow-hidden z-50 sticky top-0">
+<div class="animate-marquee flex gap-8 items-center text-[10px] font-mono uppercase tracking-wider">
+<span class="flex items-center gap-1">VN-INDEX <span class="text-success">1,254.32 (+1.2%)</span></span>
+<span class="flex items-center gap-1">USD/VND <span class="text-danger">24,850 (-0.05%)</span></span>
+<span class="flex items-center gap-1">VN CPI <span class="text-warning">3.2%</span></span>
+<span class="flex items-center gap-1">US10Y <span class="text-success">4.21%</span></span>
+<span class="flex items-center gap-1">CRUDE OIL <span class="text-danger">$78.42 (-2.1%)</span></span>
+<span class="flex items-center gap-1">HSX VOL <span class="text-success">18.4T</span></span>
+<span class="flex items-center gap-1">FTSE 100 <span class="text-success">7,642.50 (+0.4%)</span></span>
+</div>
+</div>
+<div class="flex h-[calc(100vh-32px)] overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-[200px] flex-shrink-0 bg-background-dark border-r border-border-dark flex flex-col justify-between py-6">
+<div class="flex flex-col gap-8">
+<div class="px-6 flex items-center gap-2">
+<div class="size-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">analytics</span>
+</div>
+<span class="font-syne text-lg tracking-tighter text-white">KAFI</span>
+</div>
+<nav class="flex flex-col text-sm font-medium">
+<a class="flex items-center gap-3 px-6 py-3 bg-primary/10 text-primary active-nav-border" href="#">
+<span class="material-symbols-outlined text-[20px]">account_tree</span>
+                        Pipeline
+                    </a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+                        Templates
+                    </a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">database</span>
+                        Knowledge
+                    </a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                        Calendar
+                    </a>
+</nav>
+</div>
+<div class="px-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2 rounded text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                    New Report
+                </button>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="flex-1 flex flex-col min-w-0 bg-background-dark">
+<!-- Page Header -->
+<header class="h-12 flex items-center justify-between px-6 border-b border-border-dark flex-shrink-0">
+<div class="flex items-center gap-4">
+<h1 class="font-syne text-xl text-white uppercase tracking-tight">Research Pipeline</h1>
+<span class="bg-primary/20 text-primary px-2 py-0.5 rounded text-[10px] font-bold">6 ACTIVE REPORTS</span>
+</div>
+<div class="flex items-center gap-4 text-slate-400 text-xs font-mono">
+<span class="flex items-center gap-1"><span class="size-2 bg-success rounded-full"></span> SYSTEM ONLINE</span>
+<span class="flex items-center gap-1">UTC+7: 14:42:01</span>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto custom-scrollbar">
+<!-- KPI Row -->
+<div class="grid grid-cols-4 gap-4 p-6">
+<div class="bg-panel-dark border-l-2 border-primary border-t border-r border-b border-border-dark p-4">
+<p class="text-[10px] font-mono text-slate-500 uppercase">Active Reports</p>
+<div class="flex items-end justify-between mt-1">
+<span class="text-2xl font-bold text-white leading-none">12</span>
+<span class="text-xs text-success font-mono">+2.4%</span>
+</div>
+</div>
+<div class="bg-panel-dark border-l-2 border-warning border-t border-r border-b border-border-dark p-4">
+<p class="text-[10px] font-mono text-slate-500 uppercase">Avg Draft Time</p>
+<div class="flex items-end justify-between mt-1">
+<span class="text-2xl font-bold text-white leading-none">4.2h</span>
+<span class="text-xs text-danger font-mono">-15%</span>
+</div>
+</div>
+<div class="bg-panel-dark border-l-2 border-success border-t border-r border-b border-border-dark p-4">
+<p class="text-[10px] font-mono text-slate-500 uppercase">Compliance Rate</p>
+<div class="flex items-end justify-between mt-1">
+<span class="text-2xl font-bold text-white leading-none">98.5%</span>
+<span class="text-xs text-success font-mono">+0.5%</span>
+</div>
+</div>
+<div class="bg-panel-dark border-l-2 border-primary border-t border-r border-b border-border-dark p-4">
+<p class="text-[10px] font-mono text-slate-500 uppercase">Published Feb</p>
+<div class="flex items-end justify-between mt-1">
+<span class="text-2xl font-bold text-white leading-none">28</span>
+<span class="text-xs text-success font-mono">+12%</span>
+</div>
+</div>
+</div>
+<!-- Content Grid Split -->
+<div class="flex gap-0 px-6 pb-6 h-[500px]">
+<!-- Table Left -->
+<div class="w-[65%] border border-border-dark bg-panel-dark overflow-hidden flex flex-col">
+<div class="bg-background-dark/50 border-b border-border-dark px-4 py-2 flex justify-between items-center">
+<span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Master Pipeline Feed</span>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-slate-500 text-sm cursor-pointer">filter_list</span>
+<span class="material-symbols-outlined text-slate-500 text-sm cursor-pointer">search</span>
+</div>
+</div>
+<div class="flex-1 overflow-auto custom-scrollbar">
+<table class="w-full text-xs font-mono border-collapse">
+<thead class="sticky top-0 bg-panel-dark text-slate-500 text-left border-b border-border-dark">
+<tr>
+<th class="px-4 py-3 font-normal uppercase">ID</th>
+<th class="px-4 py-3 font-normal uppercase">Title</th>
+<th class="px-4 py-3 font-normal uppercase text-center">Status</th>
+<th class="px-4 py-3 font-normal uppercase">Analyst</th>
+<th class="px-4 py-3 font-normal uppercase">Progress</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-dark/50 text-slate-300">
+<tr class="hover:bg-primary/5 cursor-pointer bg-primary/10 border-l-2 border-l-primary">
+<td class="px-4 py-4 text-white">RPT-031</td>
+<td class="px-4 py-4 truncate max-w-[200px]">Tech Sector Macro Outlook</td>
+<td class="px-4 py-4 text-center">
+<span class="bg-primary/20 text-primary border border-primary/50 px-2 py-0.5 rounded text-[9px]">AI-DRAFT</span>
+</td>
+<td class="px-4 py-4">Hai Tran</td>
+<td class="px-4 py-4">
+<div class="w-24 bg-border-dark h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 73%"></div>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-white/5 cursor-pointer">
+<td class="px-4 py-4 text-white">RPT-030</td>
+<td class="px-4 py-4 truncate max-w-[200px]">Banking Liquidity Analysis</td>
+<td class="px-4 py-4 text-center">
+<div class="flex flex-col gap-1 items-center">
+<span class="bg-warning/20 text-warning border border-warning/50 px-2 py-0.5 rounded text-[9px]">DATA-ASSM</span>
+<span class="text-[8px] text-danger animate-pulse">URGENT</span>
+</div>
+</td>
+<td class="px-4 py-4">H. Tran</td>
+<td class="px-4 py-4">
+<div class="w-24 bg-border-dark h-1 rounded-full overflow-hidden">
+<div class="bg-warning h-full" style="width: 30%"></div>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-white/5 cursor-pointer">
+<td class="px-4 py-4 text-white">RPT-029</td>
+<td class="px-4 py-4 truncate max-w-[200px]">ESG Compliance Audit</td>
+<td class="px-4 py-4 text-center">
+<span class="bg-success/20 text-success border border-success/50 px-2 py-0.5 rounded text-[9px]">COMPLIANCE</span>
+</td>
+<td class="px-4 py-4">M. Dang</td>
+<td class="px-4 py-4">
+<div class="w-24 bg-border-dark h-1 rounded-full overflow-hidden">
+<div class="bg-success h-full" style="width: 90%"></div>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-white/5 cursor-pointer">
+<td class="px-4 py-4 text-white">RPT-028</td>
+<td class="px-4 py-4 truncate max-w-[200px]">Retail Consumer Pulse Q1</td>
+<td class="px-4 py-4 text-center">
+<span class="bg-slate-700 text-slate-300 px-2 py-0.5 rounded text-[9px]">IDLE</span>
+</td>
+<td class="px-4 py-4">Hai Tran</td>
+<td class="px-4 py-4">
+<div class="w-24 bg-border-dark h-1 rounded-full overflow-hidden">
+<div class="bg-slate-500 h-full" style="width: 5%"></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Detail Panel Right -->
+<div class="w-[35%] border-y border-r border-border-dark bg-panel-dark flex flex-col p-6">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-white font-bold text-sm">RPT-031 Analysis</h3>
+<p class="text-xs text-slate-500">Assignee: Hai Tran</p>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-lg">open_in_full</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] font-mono text-primary uppercase mb-4 tracking-tighter">FinRobot Chain-of-Thought (CoT)</p>
+<!-- CoT Pipeline Vertical -->
+<div class="relative pl-6 space-y-8">
+<div class="absolute left-[7px] top-2 bottom-2 w-0.5 bg-border-dark"></div>
+<div class="relative">
+<div class="absolute -left-6 top-1 size-3.5 rounded-full bg-success border-2 border-panel-dark"></div>
+<h4 class="text-xs font-mono text-white">Data-CoT</h4>
+<p class="text-[10px] text-slate-500 mt-1">Cross-referenced 124 sector tickers via Bloomberg API.</p>
+<div class="mt-2 text-[9px] font-mono text-success uppercase">Complete</div>
+</div>
+<div class="relative">
+<div class="absolute -left-6 top-1 size-3.5 rounded-full bg-success border-2 border-panel-dark"></div>
+<h4 class="text-xs font-mono text-white">Concept-CoT</h4>
+<p class="text-[10px] text-slate-500 mt-1">Mapping tech cyclical patterns against VN macro headwind.</p>
+<div class="mt-2 text-[9px] font-mono text-success uppercase">Complete</div>
+</div>
+<div class="relative">
+<div class="absolute -left-6 top-1 size-3.5 rounded-full bg-warning border-2 border-panel-dark animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
+<h4 class="text-xs font-mono text-white">Thesis-CoT</h4>
+<p class="text-[10px] text-slate-500 mt-1">Synthesizing final investment rating recommendation.</p>
+<div class="mt-2 text-[9px] font-mono text-warning uppercase flex items-center gap-2">
+                                        In-Progress
+                                        <span class="inline-block w-8 bg-border-dark h-0.5 relative overflow-hidden">
+<span class="absolute inset-0 bg-warning animate-[marquee_2s_linear_infinite]"></span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-6 w-full py-3 border border-border-dark hover:border-primary/50 text-white text-[10px] font-mono transition-colors">
+                            VIEW FULL AUDIT LOG
+                        </button>
+</div>
+</div>
+<!-- Bottom Activity Feed -->
+<footer class="h-[140px] border-t border-border-dark bg-background-dark p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-mono text-slate-500 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">terminal</span>
+                            Live System Logs
+                        </span>
+<span class="text-[10px] font-mono text-primary">BUFFER_CAPACITY: 82%</span>
+</div>
+<div class="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar flex items-start gap-4 pb-2">
+<!-- Log Item 1 -->
+<div class="flex-shrink-0 w-64 bg-panel-dark border border-border-dark p-2 text-[10px] font-mono flex gap-3">
+<span class="material-symbols-outlined text-primary text-base">smart_toy</span>
+<div class="flex flex-col">
+<span class="text-slate-500">14:41:52</span>
+<span class="text-white truncate">AI: Thesis generation initiated for RPT-031...</span>
+</div>
+</div>
+<!-- Log Item 2 -->
+<div class="flex-shrink-0 w-64 bg-panel-dark border border-border-dark p-2 text-[10px] font-mono flex gap-3">
+<span class="material-symbols-outlined text-success text-base">verified_user</span>
+<div class="flex flex-col">
+<span class="text-slate-500">14:40:12</span>
+<span class="text-white truncate">COMP: RPT-029 passed automated audit.</span>
+</div>
+</div>
+<!-- Log Item 3 -->
+<div class="flex-shrink-0 w-64 bg-panel-dark border border-border-dark p-2 text-[10px] font-mono flex gap-3">
+<span class="material-symbols-outlined text-warning text-base">database</span>
+<div class="flex flex-col">
+<span class="text-slate-500">14:38:44</span>
+<span class="text-white truncate">DATA: Refreshing HSX macro connectors.</span>
+</div>
+</div>
+<!-- Log Item 4 -->
+<div class="flex-shrink-0 w-64 bg-panel-dark border border-border-dark p-2 text-[10px] font-mono flex gap-3">
+<span class="material-symbols-outlined text-primary text-base">smart_toy</span>
+<div class="flex flex-col">
+<span class="text-slate-500">14:35:10</span>
+<span class="text-white truncate">AI: Sentiment analysis of VCB Q4 call complete.</span>
+</div>
+</div>
+<!-- Log Item 5 -->
+<div class="flex-shrink-0 w-64 bg-panel-dark border border-border-dark p-2 text-[10px] font-mono flex gap-3">
+<span class="material-symbols-outlined text-danger text-base">warning</span>
+<div class="flex flex-col">
+<span class="text-slate-500">14:32:01</span>
+<span class="text-white truncate">SYS: High latency detected on L2 node.</span>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</div>
+</body></html>

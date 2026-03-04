@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  /* ──────────────────────────────────────────────
+     KAFI DARK THEME  v3
+     Reference: x.kafi.vn trading platform
+     Rule: neutral chrome → brand green ONLY for data signals & CTAs
+     Backgrounds/text: pure neutral gray (no green tint)
+     Green (#00D47A): reserved for price-up, active states, primary CTA
+  ────────────────────────────────────────────── */
+
+  /* Backgrounds — neutral charcoal, layered depth */
+  --color-bg-base:     #0C0D0C;
+  --color-bg-surface:  #111412;
+  --color-bg-card:     #181A18;
+  --color-bg-hover:    #1E211E;
+  --color-bg-selected: #222622;
+
+  /* Borders — neutral, subtle */
+  --color-border-dark:   #242624;
+  --color-border-bright: #303530;
+
+  /* KAFI brand green — CTA, price-up, active only */
+  --color-primary:  #00D47A;
+
+  /* Semantic status — 3 semantic accents only */
+  --color-amber:    #F5A623;   /* AI in-progress / warning */
+  --color-danger:   #FF4560;   /* deadline / overdue / urgent */
+  /* NOTE: published / success / active all use --color-primary (#00D47A) */
+
+  /* Text hierarchy — pure neutral, maximum legibility */
+  --color-text-1: #EAEAEA;   /* primary — headings, values    ~14:1 on base */
+  --color-text-2: #8A8F8A;   /* secondary — labels, meta      ~7:1 on base  */
+  --color-text-3: #505550;   /* tertiary — captions, dim text ~3.5:1 on base */
+  --color-text-4: #2A2E2A;   /* ghost — decorative only */
+
+  /* Typography — Inter (UI/display) + sans-serif (data/numbers) */
+  --font-mono:    "Inter", system-ui, sans-serif;
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-syne:    "Inter", system-ui, sans-serif;
+
+  --radius-sm: 3px;
+  --radius:    6px;
+  --radius-lg: 10px;
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body, #root { height: 100%; width: 100%; overflow: hidden; background: #0C0D0C; }
+  body { font-family: var(--font-sans); color: var(--color-text-1); }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+    line-height: 1;
+    vertical-align: middle;
+  }
+}
+
+@layer utilities {
+  .font-syne   { font-family: var(--font-syne); }
+  .font-mono   { font-family: var(--font-mono); }
+  .font-sans   { font-family: var(--font-sans); }
+  .text-text-1 { color: var(--color-text-1); }
+  .text-text-2 { color: var(--color-text-2); }
+  .text-text-3 { color: var(--color-text-3); }
+  .text-text-4 { color: var(--color-text-4); }
+  .bg-base     { background: var(--color-bg-base); }
+  .bg-surface  { background: var(--color-bg-surface); }
+  .bg-card     { background: var(--color-bg-card); }
+  .bg-hover    { background: var(--color-bg-hover); }
+  .bg-selected { background: var(--color-bg-selected); }
+  .border-dark { border-color: var(--color-border-dark); }
+  .text-primary { color: var(--color-primary); }
+  .text-success { color: var(--color-primary); }
+  .text-danger  { color: var(--color-danger); }
+  .text-amber   { color: var(--color-amber); }
+  .text-sky     { color: var(--color-sky); }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: inline-flex;
+  gap: 3rem;
+  animation: marquee 40s linear infinite;
+  white-space: nowrap;
+}
+
+.custom-scrollbar::-webkit-scrollbar       { width: 4px; height: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #0C0D0C; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #303530; border-radius: 2px; }
+
+.active-nav { border-left: 2px solid var(--color-primary); background: rgba(0,212,122,0.08); color: var(--color-primary); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
